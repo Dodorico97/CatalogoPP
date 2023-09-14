@@ -1,0 +1,121 @@
+:root {
+    --color-destacado: #318f9a;
+    --color-fondo: #ebded4;
+    --color-whatsapp: #000000;
+    --color-boton: #000;
+    --color-texto-boton: #fff;
+}
+
+body, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-fondo);
+    box-sizing: border-box;
+}
+
+header {
+    color: var(--color-destacado);
+    font-family: 'Alice', serif;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+#carrito {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--color-destacado);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.producto-precio {
+    flex: 1;  
+    text-align: right;
+    margin-left: 10px;
+}
+
+.producto-eliminar {
+    flex: 0.2;
+}
+
+.imagen-eliminar {
+    cursor: pointer;
+    max-height: 20px;
+    padding: 5px;
+    background-color: var(--color-fondo);
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.imagen-eliminar:hover {
+    background-color: #c0392b;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#carrito > button, .contenedor-botones > button:first-child {
+    background-color: var(--color-boton);
+    color: var(--color-texto-boton);
+}
+
+#btn-comprar {
+    background-color: var(--color-whatsapp);
+    color: var(--color-texto-boton);
+}
+
+.contenedor-botones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-carrito {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid #ffffff; 
+    margin-top: 10px;          
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+footer img {
+    max-height: 40px;
+}
+
+footer div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+footer a {
+    color: var(--color-destacado);
+    font-family: 'Alice', serif;
+}
