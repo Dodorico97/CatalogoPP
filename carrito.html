@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+    <title>TU MATE - carrito</title>
+    <link rel="stylesheet" href="carrito.css">
+    <script src="carrito.js"></script>
+</head>
+<body onload="mostrarCarritoEnNuevaVentana()">
+
+    <header>
+        <h2>Carrito de Compras</h2>
+    </header>
+    <div id="carrito">
+        <ul id="lista-carrito">
+            <li class="item-carrito">
+                <span class="producto-eliminar">
+                    <img src="Imagenes/X eliminar.png" alt="Eliminar" class="imagen-eliminar">
+                </span>
+                <span class="producto-nombre">Nombre del Producto</span>
+                <span class="producto-precio">$0.00</span>
+                <span class="producto-cantidad">1</span>
+            </li>
+        </ul>
+        <div class="total-carrito">
+            <span id="precio-total">$0.00</span>
+        </div>
+        <div class="contenedor-botones">
+            <button onclick="vaciarCarrito() && mostrarCarritoEnNuevaVentana()">Vaciar carrito</button>
+            <button id="btn-comprar" onclick="redirigirAWhatsApp()">Comprar</button>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <img src="imagenes/iconoInstagram.png">
+            <p><a href="https://www.instagram.com/tumate_cordoba/" target="_blank"><h2>TUMATE_CORDOBA</h2></a></p>
+        </div>
+    </footer>
+
+    <script>
+        function mostrarCarritoEnNuevaVentana() {
+            cargarCarritoDesdeLocalStorage(); // Carga el carrito desde localStorage
+            mostrarCarrito(); // Muestra el contenido del carrito
+        }
+    </script>
+
+</body>
+</html>
