@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ebded4;
+}
+
+header, nav, main, footer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    justify-content: center;
+    color: #318f9a;
+    font-family: 'Alice', serif;
+    display: flex; 
+    align-items: center;
+    position: relative;
+}
+
+.boton-imagen {
+    position: absolute;
+    top: 50%;
+    right: 0;            /* Alinea el enlace del carrito a la derecha del contenedor */
+    transform: translateY(-50%); /* Centra el enlace verticalmente */
+}
+
+#imagenHeader {
+    display: block;  /* Esto elimina el espacio blanco que a veces aparece debajo de las imágenes inline */
+    max-height: 40px;     
+    width: auto;
+    border-radius: 5px;   /* esto se suma al estilo de botón */
+    transition: background-color 0.3s;
+}
+
+#imagenHeader:hover {
+    background-color: #25676a;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.producto {
+    width: 300px;
+    padding: 10px;
+    text-align: center;
+}
+
+.producto img {
+    width: 290px;
+    height: 400px;
+    object-fit: cover;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer img {
+    max-height: 40px;
+    width: auto;
+}
+
+footer div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+footer a {
+    color: #318f9a;
+    font-family: 'Alice', serif
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #000000;
+}
+
+.añadir {
+    background-color: #318f9a;
+    color: #000000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.añadir:hover {
+    background-color: #25676a;
+}
+
