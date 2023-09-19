@@ -1,5 +1,51 @@
 let carrito = [];
 
+const productos = [
+    {img: "TERMO 1L.jpeg", desc: "TERMO 1L CON MANIJA", price: "$15.000"},
+    {img: "TERMO 1L SIN MANIJA.jpeg", desc: "TERMO 1L SIN MANIJA", price: "$15.500"},
+    {img: "TERMO 2L.jpeg", desc: "TERMO 2L", price: "$14.500"},
+    {img: "TERMO 1,2L MANIJA.jpeg", desc: "TERMO 1,2L MANIJA", price: "$16.500"},
+    {img: "TERMOS PASTEL.jpeg", desc: "TERMOS PASTEL", price: "$14.850"},
+    {img: "TERMO+MATE.jpeg", desc: "TERMO+MATE", price: "$20.500"},
+    {img: "SET MILITAR.jpeg", desc: "SET MILITAR", price: "$32.000"},
+    {img: "SET ROSA.jpeg", desc: "SET ROSA", price: "$37.000"},
+    {img: "BOTELLA TERMICA.jpeg", desc: "BOTELLA TERMICA", price: "$9.200"},
+];
+
+document.addEventListener("DOMContentLoaded", function() {
+    const sectionProductos = document.querySelector('.productos');
+
+    productos.forEach(product => {
+        const article = document.createElement('article');
+        article.className = "producto";
+
+        const divImagen = document.createElement('div');
+        divImagen.className = "producto-imagen-contenedor";
+
+        const img = document.createElement('img');
+        img.src = "imagenes/" + product.img;
+
+        const btn = document.createElement('button');
+        btn.className = "añadir";
+        btn.onclick = function() { añadirAlCarrito(product.desc); };
+
+        const h2 = document.createElement('h2');
+        h2.textContent = product.price;
+
+        btn.appendChild(h2);
+        divImagen.appendChild(img);
+        divImagen.appendChild(btn);
+
+        const h1 = document.createElement('h1');
+        h1.textContent = product.desc;
+
+        article.appendChild(divImagen);
+        article.appendChild(h1);
+
+        sectionProductos.appendChild(article);
+    });
+});
+
 function añadirAlCarrito(nombreProducto) {
     const precios = {
         'TERMO 1L CON MANIJA': 15000,
