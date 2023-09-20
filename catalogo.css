@@ -10,6 +10,18 @@ header, nav, main, footer {
     margin: 0 auto;
 }
 
+.producto-imagen-contenedor img {
+    border-radius: 10px;  /* Bordes redondeados */
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s; /* Transiciones suaves */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.producto-imagen-contenedor:hover img {
+    transform: scale(1.05); /* Escalar la imagen al hacer hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más profunda al hacer hover */
+    opacity: 0.92; /* Cambio sutil en la opacidad al hacer hover */
+}
+
 header {
     justify-content: center;
     color: #318f9a;
@@ -42,6 +54,13 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.producto h1 {
+    font-family: 'Roboto', sans-serif;  /* Usar la fuente 'Roboto' */
+    font-size: 1.5em;
+    color: #000000;
+    margin-top: 10px;
 }
 
 .producto {
@@ -100,7 +119,7 @@ hr {
 }
 
 .añadir:hover {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(21, 149, 153, 0.7);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
