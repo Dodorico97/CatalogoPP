@@ -22,15 +22,15 @@ header {
 .boton-imagen {
     position: absolute;
     top: 50%;
-    right: 0;            /* Alinea el enlace del carrito a la derecha del contenedor */
-    transform: translateY(-50%); /* Centra el enlace verticalmente */
+    right: 0;
+    transform: translateY(-50%);
 }
 
 #imagenHeader {
-    display: block;  /* Esto elimina el espacio blanco que a veces aparece debajo de las imágenes inline */
-    max-height: 40px;     
+    display: block;
+    max-height: 40px;
     width: auto;
-    border-radius: 5px;   /* esto se suma al estilo de botón */
+    border-radius: 5px;
     transition: background-color 0.3s;
 }
 
@@ -76,7 +76,7 @@ footer div {
 
 footer a {
     color: #318f9a;
-    font-family: 'Alice', serif
+    font-family: 'Alice', serif;
 }
 
 hr {
@@ -108,5 +108,21 @@ hr {
     position: relative;
     width: 290px;
     height: 400px;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    padding: 5px 10px;  /* Un poco más de espacio horizontal */
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    font-size: 0.8em;  /* Un poco más grande */
+    font-weight: bold;
+    display: none;  
+    border: 1px solid white;  /* Añadir un borde */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);  /* Añadir una sombra */
+    text-align: center;  /* Asegurarse de que el texto esté centrado */
 }
 
