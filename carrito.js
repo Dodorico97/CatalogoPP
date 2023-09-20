@@ -12,7 +12,7 @@ const productos = [
     {img: "BOTELLA TERMICA.jpeg", desc: "BOTELLA TERMICA", price: "$9.200"},
 ];
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', (event) => {
     const sectionProductos = document.querySelector('.productos');
 
     productos.forEach(product => {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const btn = document.createElement('button');
         btn.className = "añadir";
-        btn.onclick = function() { añadirAlCarrito(product.desc); };
+        btn.onclick = function() { añadirAlCarrito(product); };
 
         const h2 = document.createElement('h2');
         h2.textContent = product.price;
@@ -46,28 +46,32 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function añadirAlCarrito(nombreProducto) {
-    const precios = {
-        'TERMO 1L CON MANIJA': 15000,
-        'TERMO 1L SIN MANIJA': 15500,
-        'TERMO 2L': 14500,
-        'TERMO 1,2L MANIJA': 16500,
-        'TERMOS PASTEL': 14850,
-        'TERMO+MATE': 20500,
-        'SET MILITAR': 32000,
-        'SET ROSA': 37000,
-        'BOTELLA TERMICA': 9200
-    };
-
+function añadirAlCarrito(productoSeleccionado) {
     const producto = {
-        id: Date.now() + Math.random().toString(16).substr(2, 8),  // genera un ID único
-        nombre: nombreProducto,
-        precio: precios[nombreProducto],
+        id: Date.now() + Math.random().toString(16).substr(2, 8),
+        nombre: productoSeleccionado.desc,
+        precio: parseInt(productoSeleccionado.price.replace('$', '').replace('.', '')),  // Convertir el precio a número
         cantidad: 1
     };
 
     carrito.push(producto);
     guardarCarritoEnLocalStorage();
+
+    actualizarBadge();
+}
+
+function actualizarBadge() {
+    const badge = document.getElementById("carrito-badge");
+    const totalProductos = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+
+    badge.textContent = totalProductos;
+
+    // Mostrar u ocultar el badge dependiendo de la cantidad
+    if (totalProductos > 0) {
+        badge.style.display = "block";
+    } else {
+        badge.style.display = "none";
+    }
 }
 
 function mostrarCarrito() {
@@ -107,7 +111,6 @@ function mostrarCarrito() {
 
         li.appendChild(spanEliminar);
         li.appendChild(spanNombre);
-        li.appendChild(spanCantidad);
         li.appendChild(spanPrecio);
 
         listaCarrito.appendChild(li);
@@ -144,18 +147,14 @@ function vaciarCarrito() {
 }
 
 function actualizarTotal() {
-    let total = 0;
-    carrito.forEach(producto => {
-        total += producto.precio * producto.cantidad;
-    });
+    let total = carrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
     document.getElementById("precio-total").textContent = "$" + total.toFixed(2);
 }
 
 function vaciarCarrito() {
-    let confirmacion = confirm("¿Estás seguro de que quieres vaciar el carrito?");
-    
+    const confirmacion = confirm("¿Estás seguro de que quieres vaciar el carrito?");
     if (confirmacion) {
-        carrito = [];
+        carrito.length = 0;  // Limpiar el carrito sin reasignar
         localStorage.removeItem('carrito');
         mostrarCarrito();
     }
@@ -174,4 +173,4 @@ function redirigirAWhatsApp() {
     window.open(url, '_blank');
 }
 
-cargarCarritoDesdeLocalStorage(); 
+cargarCarritoDesdeLocalStorage();
