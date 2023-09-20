@@ -10,21 +10,17 @@ header, nav, main, footer {
     margin: 0 auto;
 }
 
-.producto-imagen-contenedor {
-    position: relative;
-}
-
 .producto-imagen-contenedor img {
     cursor: pointer;
-    border-radius: 10px;  /* Bordes redondeados */
-    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s; /* Transiciones suaves */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .producto-imagen-contenedor:hover img {
-    transform: scale(1.05); /* Escalar la imagen al hacer hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más profunda al hacer hover */
-    opacity: 0.92; /* Cambio sutil en la opacidad al hacer hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0.92;
 }
 
 header {
@@ -61,35 +57,32 @@ header {
     justify-content: center;
 }
 
+.producto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .producto h1 {
-    font-family: 'Roboto', sans-serif;  /* Usar la fuente 'Roboto' */
-    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
     color: #000000;
-    margin-top: 10px;
 }
 
 .producto h2 {
     position: absolute;
-    bottom: 10px; /* Puedes ajustar este valor según donde quieras el precio */
-    right: 10px; /* Puedes ajustar este valor si lo necesitas */
+    bottom: 10px;
+    right: 10px;
     background-color: rgba(21, 149, 153, 0.7);
     border-radius: 5px;
     padding: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .producto {
     width: 300px;
     padding: 10px;
     text-align: center;
-}
-
-.producto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
 }
 
 footer {
@@ -130,15 +123,15 @@ hr {
     position: absolute;
     top: -5px;
     right: -10px;
-    padding: 5px 10px;  /* Un poco más de espacio horizontal */
+    padding: 5px 10px;
     border-radius: 50%;
     background-color: red;
     color: white;
-    font-size: 0.8em;  /* Un poco más grande */
+    font-size: 0.8em;
     font-weight: bold;
     display: none;  
-    border: 1px solid white;  /* Añadir un borde */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);  /* Añadir una sombra */
-    text-align: center;  /* Asegurarse de que el texto esté centrado */
+    border: 1px solid white; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+    text-align: center;
 }
 
