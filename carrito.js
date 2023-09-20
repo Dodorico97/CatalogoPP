@@ -18,30 +18,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
     productos.forEach(product => {
         const article = document.createElement('article');
         article.className = "producto";
-
+    
         const divImagen = document.createElement('div');
         divImagen.className = "producto-imagen-contenedor";
-
+    
         const img = document.createElement('img');
         img.src = "imagenes/" + product.img;
-
-        const btn = document.createElement('button');
-        btn.className = "añadir";
-        btn.onclick = function() { añadirAlCarrito(product); };
-
+        img.onclick = function() { añadirAlCarrito(product); };
+        divImagen.appendChild(img);
+    
         const h2 = document.createElement('h2');
         h2.textContent = product.price;
-
-        btn.appendChild(h2);
-        divImagen.appendChild(img);
-        divImagen.appendChild(btn);
-
+        divImagen.appendChild(h2);
+    
         const h1 = document.createElement('h1');
         h1.textContent = product.desc;
-
+    
         article.appendChild(divImagen);
         article.appendChild(h1);
-
+    
         sectionProductos.appendChild(article);
     });
 });
@@ -66,7 +61,6 @@ function actualizarBadge() {
 
     badge.textContent = totalProductos;
 
-    // Mostrar u ocultar el badge dependiendo de la cantidad
     if (totalProductos > 0) {
         badge.style.display = "block";
     } else {
@@ -154,7 +148,7 @@ function actualizarTotal() {
 function vaciarCarrito() {
     const confirmacion = confirm("¿Estás seguro de que quieres vaciar el carrito?");
     if (confirmacion) {
-        carrito.length = 0;  // Limpiar el carrito sin reasignar
+        carrito.length = 0;
         localStorage.removeItem('carrito');
         mostrarCarrito();
     }
