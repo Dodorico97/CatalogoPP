@@ -1,17 +1,18 @@
-const productos = [
-    {img: "TERMO 1L.jpeg", desc: "TERMO 1L CON MANIJA", price: "$15.000"},
-    {img: "TERMO 1L SIN MANIJA.jpeg", desc: "TERMO 1L SIN MANIJA", price: "$15.500"},
-    {img: "TERMO 2L.jpeg", desc: "TERMO 2L", price: "$14.500"},
-    {img: "TERMO 1,2L MANIJA.jpeg", desc: "TERMO 1,2L MANIJA", price: "$16.500"},
-    {img: "TERMOS PASTEL.jpeg", desc: "TERMOS PASTEL", price: "$14.850"},
-    {img: "TERMO+MATE.jpeg", desc: "TERMO+MATE", price: "$20.500"},
-    {img: "SET MILITAR.jpeg", desc: "SET MILITAR", price: "$32.000"},
-    {img: "SET ROSA.jpeg", desc: "SET ROSA", price: "$37.000"},
-    {img: "BOTELLA TERMICA.jpeg", desc: "BOTELLA TERMICA", price: "$9.200"},
-];
-
 document.addEventListener('DOMContentLoaded', (event) => {
     const sectionProductos = document.querySelector('.productos');
+    if (!sectionProductos) return;
+
+    const productos = [
+        {img: "TERMO 1L.jpeg", desc: "TERMO 1L CON MANIJA", price: "$15.000"},
+        {img: "TERMO 1L SIN MANIJA.jpeg", desc: "TERMO 1L SIN MANIJA", price: "$15.500"},
+        {img: "TERMO 2L.jpeg", desc: "TERMO 2L", price: "$14.500"},
+        {img: "TERMO 1,2L MANIJA.jpeg", desc: "TERMO 1,2L MANIJA", price: "$16.500"},
+        {img: "TERMOS PASTEL.jpeg", desc: "TERMOS PASTEL", price: "$14.850"},
+        {img: "TERMO+MATE.jpeg", desc: "TERMO+MATE", price: "$20.500"},
+        {img: "SET MILITAR.jpeg", desc: "SET MILITAR", price: "$32.000"},
+        {img: "SET ROSA.jpeg", desc: "SET ROSA", price: "$37.000"},
+        {img: "BOTELLA TERMICA.jpeg", desc: "BOTELLA TERMICA", price: "$9.200"},
+    ];
 
     productos.forEach(product => {
         const article = document.createElement('article');
