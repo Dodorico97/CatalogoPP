@@ -66,3 +66,4 @@ function actualizarBadge() {
         badge.style.display = "none";
     }
 }
+
