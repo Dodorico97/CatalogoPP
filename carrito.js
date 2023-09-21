@@ -1,5 +1,33 @@
 let carrito = [];
 
+const dialog = document.getElementById('customDialog');
+const confirmButton = document.getElementById('confirmVaciar');
+const cancelButton = document.getElementById('cancelVaciar');
+
+confirmButton.addEventListener('click', function() {
+    carrito.length = 0;
+    localStorage.removeItem('carrito');
+    mostrarCarrito();
+    hideCustomDialog();
+});
+
+cancelButton.addEventListener('click', hideCustomDialog);
+
+function showCustomDialog() {
+    dialog.style.display = 'block';
+}
+
+function hideCustomDialog() {
+    dialog.style.display = 'none';
+}
+
+confirmButton.addEventListener('click', function() {
+    vaciarCarrito();
+    hideCustomDialog();
+});
+
+cancelButton.addEventListener('click', hideCustomDialog);
+
 function mostrarCarrito() {
     const listaCarrito = document.getElementById("lista-carrito");
     listaCarrito.innerHTML = '';
@@ -72,12 +100,7 @@ function actualizarTotal() {
 }
 
 function vaciarCarrito() {
-    const confirmacion = confirm("¿Estás seguro de que quieres vaciar el carrito?");
-    if (confirmacion) {
-        carrito.length = 0;
-        localStorage.removeItem('carrito');
-        mostrarCarrito();
-    }
+    showCustomDialog();
 }
 
 function redirigirAWhatsApp() {
